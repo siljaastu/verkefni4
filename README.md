@@ -1,90 +1,84 @@
-# Vefforritun 1, 2023: Verkefni 2, HTML #2
+# Vefforritun 1, 2023: Verkefni 4, CSS #2
 
-[Kynning á verkefni](https://youtu.be/L5s9N0ap6eo).
+[Kynning í fyrirlestri](https://youtu.be/uiIyHNxgalo).
 
 ## Markmið
 
-- Vinna með og velja HTML element.
-- Nota HTML validator og huga að því hvernig HTML er skrifað.
-- Huga að aðgengi og nota aXe tólið.
+- Nota flexbox til að stýra útliti
+- Nota CSS custom properties (variables, breytur)
 
-## Lýsing
+## Verkefni 2–6
 
-Setja skal upp fjórar síður fyrir veitingarstað, aðgengilegar af internetinu (gegnum Netlify):
+Í verkefnum 2–6 munum við vinna áfram með sama verkefni og byggja ofan á það:
 
-- Forsíða.
-- Um veitingarstaðinn síða.
-- Matseðilssíða.
-- Pöntunarsíða með formi.
+- [Verkefni 2](https://github.com/vefforritun/vef1-2023-v2) skilgreinir grunn HTML og síður.
+- [Verkefni 3](https://github.com/vefforritun/vef1-2023-v3) bætir við grunn viðmóti.
+- [Verkefni 4](https://github.com/vefforritun/vef1-2023-v4) setur upp útlit (e. layout).
+- [Verkefni 5](https://github.com/vefforritun/vef1-2023-v5) setur upp grind og gerir útlit skalanlegt (e. responsive).
+- [Verkefni 6](https://github.com/vefforritun/vef1-2023-v6) setur upp tól til að hjálpa við skipulag og vinnu.
 
-## Síður
+## Verkefnið
 
-### Efni
+Verkefnið er framhald af [verkefni 3](https://github.com/vefforritun/vef1-2023-v2), nýtir það efni sem uppsett er í því, og fylgir þeirri verkefnalýsingu. Leyfilegt er að nota [sýnilausn að verkefni 3](https://github.com/vefforritun/vef1-2023-v3-synilausn), sem gefin verður út föstudaginn 15. september.
 
-Gefið efni er í textaskrám undir `gogn/` og er Markdown formi. Ekki á að birta nákvæmlega það efni sem kemur fram heldur fylgja leiðbeiningum í hverri skrá fyrir sig.
-
-Gefnar myndir eru í `myndir/` og skal vísa í þær þar (nota þarf relative vísun úr `sidur/` yfir í `myndir/` þar sem við á.)
-
-### Sameiginlegt
-
-Allar síður skulu innihalda valmynd sem vísar á allar aðrar síður og merkja valda síðu á einhvern hátt. Athugið að allar síður fyrir utan forsíðu verða að vera undir `sidur/` möppu.
-
-Allar síður skulu hafa fót (gögn neðst á síðunni) með upplýsingum um veitingastaðinn og opnunartíma (sjá `gogn/fotur.md`).
-
-Allar síður skulu hafa lýsigögn skilgreind fyrir `description`, `og:title`, `og:description` og `og:image` (alltaf `myndir/sharing.jpg`).
-
-Allar síður nema forsíða skulu hafa tengil neðst í efni með textanum „Aftur á forsíðu“.
-
-Allar síður skulu hafa fyrisögn og „beint í efni“ hlekk á eftir fyrirsögn, en á undan valmynd.
-
-### Forsíða
-
-`index.html`, forsíða með texta tilgreindum í `gogn/index.md`
-
-Inniheldur inngangstexta og yfirlit með vísunum í aðrar síður.
-
-### Um veitingarstaðinn síða
-
-Síðan skal eiga heima undir `sidur/um.html`, með texta og myndum tilgreindum í `gogn/um.md`.
-
-Leyfilegt er að setja `width` eigindi á mynd til að takmarka breidd.
-
-### Matseðilssíða
-
-Síða með lista af réttum sem skal eiga heima undir `sidur/matsedill.html`, gögn í [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) skjalinu `gogn/rettir.csv`.
-
-Tafla skal vera uppsett með fjórum dálkum: númer (`id`), titill réttar (`titill`), lýsing (`lysing`) og verð (`verd`).
-
-### Pöntunarsíða
-
-Síða með formi til að panta rétti frá veitingarstaðnum _eða_ panta borð, staðsett undir `sidur/pontun.html`, svæði og reitir skilgreindir í `gogn/pontun.md`.
-
-Aðeins á að setja upp formið, **engin** forritun fyrir virkni í formi með JavaScript eða í bakenda.
-
-### Myndir
-
-Myndir frá Unsplash eftir:
-
-- [Connor Wilkins](https://unsplash.com/photos/2crxTr4jCkc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
-- [Raamin ka](https://unsplash.com/photos/uR51HXLO7G0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
-- [Philip Martin](https://unsplash.com/photos/man-standing-near-balcony-5aGUyCW_PJw?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
-- [Robert Godwin](https://unsplash.com/photos/cdksyTqEXzo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
-- [Jason Leung](https://unsplash.com/photos/cdksyTqEXzo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+Nú skal bæta við einföldu útliti á efnið með CSS. Allt útlitið skal vera í `./styles.css` og **allar** HTML skrár skulu vísa í það.
 
 ## Útlit
 
-Ekki er gefin forskrift að útliti, þar sem verkefnið snýst um að setja upp merkingarfræðilegt HTML sem snýst um að huga að merkingarfræði _ekki_ útliti.
+Fyrirmynd að útliti er í `fyrirmynd/` möppu. Öll skjáskot eru tekin í `1000px` breiðum Firefox vafra. Athugið að fyrirmynd er uppfærð frá verkefni 3.
 
-Ekki þarf eða ætti að gera neitt með CSS. Ef þið viljið fara lengra og byrja á CSS skulið þið passa ykkur á að vanda til verka og helst bera undir kennara eða dæmatímakennara.
+Þar sem allt útlit skal útfæra í einni CSS skrá, skal huga að cascade og erfðum, þó er fullkomlega eðlilegt að endurtaka eigindi, en t.d. fyrir málsgreinar (`<p>`) þarf aðeins að taka fram einu sinni hvert margin þeirra er. Fyrir útlit sem notar „box“ er hægt að útfæra einu sinni og endurtaka þrisvar sinnum.
 
-## Almennt
+**Allt það sem tekið er fram í verkefni 3 gildir áfram nema annað komi fram hér**.
 
-- **Nýta skal merkingarfræðilega viðeigandi element**.
-- Valmynd skal útfæra með því að afrita og breyta milli síðna, ekki er krafa um neina „forritun“ til að útbúa valmynd.
-- Síður skulu nota `utf-8` stafasett.
-- Passa skal upp á að hafa snyrtilega uppsettan kóða þar sem inndráttur er samræmdur.
-- Allar síður skulu vera villulausar ef prófaðar með [HTML validator](https://validator.w3.org/).
-- Allar síður skulu vera án aðgengisvillna ef prófaðar með [aXe](https://www.deque.com/axe/), setjið upp viðbót í vafra.
+### Almennt
+
+Gefið er `styles.css` skjal með grunn að lausn.
+
+Gefið er HTML úr sýnilausn sem er æskilegt að nota, en ekki krafa.
+
+### CSS Custom Properties
+
+Nota skal skilgreind CSS custom properties sem gefin eru í `styles.css`.
+
+### Box
+
+Útfæra skal `.box` með því útliti sem kemur fram í fyrirmynd og nota sömu skilgreiningu á öllum stöðum.
+
+### Myndir
+
+Búið er að uppfæra myndir frá verkefni 3. Á „Um“ síðu skal birta myndir þar sem þær eru að hámarki `400px` háar og alltaf birtar frá topp og miðju (nota skal `object-fit`  og `object-position`).
+
+### Leturgerðir
+
+Nota skal `Lora` fyrir fyrirsagnir og `Noto Sans Display` fyrir meginmál leturgerðirnar frá Google Fonts. Sækja skal leturgerðirnar og geyma í `fonts/`.
+
+### Takmarkanir
+
+Aðeins skal nota eftirfarandi eigindi, og ef tekið fram, viðeigandi gildi:
+
+- `background-color`
+- `border` og nánari skilgreiningar
+- `box-sizing`
+- `color`
+- `display: flex;`
+  - önnur flex eigindi og `gap`
+  - _ekki_ skal nota önnur gildi fyrir `display`
+- `font-display`
+- `font-family`
+- `font-style`
+- `font-weight`
+- `list-style: none;`
+- `margin-bottom` og `margin-top`
+  - _ekki_ ætti að nota `margin-left` og `margin-right` heldur flexbox
+- `padding` eigindi
+- `src`
+- `width`, `max-width`, `max-height`
+- Þau eigindi notuð í `.sr-only` og ekki tiltekin hér ætti ekki að nota í annað.
+
+Ekki skal nota önnur `display` gildi en `display: flex;` og ekki nota `text-align` til að miðja efni.
+
+Ekki þarf að huga að skalanleika (síðan þarf ekki að líta vel út í undir `800px` skjá).
 
 ## Netlify
 
@@ -92,20 +86,17 @@ Setja skal upp verkefni á Netlify með því að hlaða upp skrám með „manu
 
 ## Mat
 
-- 25% – Merkingarfræðileg element og síður án villna frá HTML validator og aXe validator.
-- 15% – Haus, valmynd og fótur eftir forskrift.
-- 15% – Forsíða uppsett eftir forskrift.
-- 15% – Um síða uppsett eftir forskrift.
-- 15% – Matseðilssíða uppsett eftir forskrift.
-- 15% – Pöntunarsíða uppsett eftir forskrift.
+- 20% – Snyrtilega uppsett og gilt CSS.
+- 20% – Aðeins leyfileg eigindi og gildi notuð.
+- 60% – Útlit skv. fyrirmynd.
 
 ## Sett fyrir
 
-Verkefni sett fyrir í fyrirlestri mánudaginn 28. ágúst 2023.
+Verkefni sett fyrir í fyrirlestri mánudaginn 11. september 2023.
 
 ## Skil
 
-Skila skal í Canvas, seinasta lagi fyrir lok dags fimmtudaginn 7. september 2023.
+Skila skal í Canvas, seinasta lagi fyrir lok dags fimmtudaginn 21. september 2023.
 
 Skilaboð skulu innihalda:
 
@@ -123,6 +114,3 @@ Ef stórt mállíkan (LLM, „gervigreind“, t.d. ChatGTP) er notað til að sk
 Sett verða fyrir tíu minni verkefni þar sem átta bestu gilda 5% hvert, samtals 40% af lokaeinkunn.
 
 Sett verða fyrir tvö hópverkefni þar sem hvort um sig gildir 10%, samtals 20% af lokaeinkunn.
-# verkefni3
-# verkefni4
-# verkefni4
