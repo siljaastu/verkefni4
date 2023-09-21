@@ -29,34 +29,49 @@ html {
 
   /* Letur stillingar */
   --font-base-size: 1rem;
-  --font-family-base: 'Noto Sans Display', Helvetica, Arial, sans-serif;
-  --font-family-heading: 'Lora', Georgia, serif;
+  --font-family-base: "Noto Sans Display", Helvetica, Arial, sans-serif;
+  --font-family-heading: "Lora", Georgia, serif;
 }
-
 
 @font-face {
   font-family: "Lora";
-  src: url("fonts/fira/eot/FiraSans-Regular.eot");
-  src: url("fonts/fira/eot/FiraSans-Regular.eot") format("embedded-opentype"),
-    url("fonts/fira/woff2/FiraSans-Regular.woff2") format("woff2"),
-    url("fonts/fira/woff/FiraSans-Regular.woff") format("woff"),
-    url("fonts/fira/woff2/FiraSans-Regular.ttf") format("truetype");
+  src: url("fonts/Lora/static/Lora-Bold.ttf");
 }
-
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("fonts/Noto_Sans_Display/static/NotoSansDisplay-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("fonts/Noto_Sans_Display/static/NotoSansDisplay-Bold.ttf");
+  font-weight: bold;
+}
+html,
+input,
+select,
+button {
+  font-size: var(--font-base-size);
+  font-family: var(--font-family-base);
+}
 body {
-  font-family: "Lora", "Georgia", serif;
-  font-weight: 400;
+  font-family: var(--font-family-base);
+  font-weight: normal;
 }
 h1,
 h2,
 h3 {
-  margin-bottom: 1rem;
-  font-family: "Lora", "Georgia", serif;
-  font-weight: 700;
+  margin-bottom: var(--spacing);
+  font-family: var(--font-family-heading);
+  font-weight: bold;
 }
 p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
+a {
+  color: inherit;
+}
+
 /* og látum erfast á allt */
 *,
 *:before,
@@ -75,12 +90,13 @@ p {
   width: 1px;
 }
 .wrapper {
-  display:flex;
+  display: flex;
+  flex-direction: column;
 }
 .header {
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding: var(--spacing);
   background-color: var(--color-dark);
   color: var(--color-light);
   text-align: center;
@@ -88,11 +104,11 @@ p {
   /* Nav */
 }
 .nav {
-  padding: 1rem;
+  padding: var(--spacing);
   background-color: var(--color-light);
   color: var(--color-dark);
   border-bottom: var(--border-large) solid var(--color-gold);
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
 .nav ul {
   text-align: center;
@@ -104,10 +120,28 @@ p {
 }
 /* Main */
 .main {
-  padding: 1rem;
+  padding: var(--spacing);
   margin: 0 auto;
   width: 100%;
   max-width: 900px;
+}
+.cards h3 {
+  margin-bottom: 0px;
+}
+.cards a {
+  font-family: var(--font-family-base);
+  font-weight: bold;
+}
+.cards hr {
+  border: var(--border-small) solid var(--color-dark);
+  margin-top: 0;
+}
+dt {
+  font-family: var(--font-family-base);
+  font-weight: bold;
+}
+dd {
+  margin-bottom: var(--spacing);
 }
 .content {
   display: flex;
@@ -119,27 +153,33 @@ p {
   width: 100%;
 }
 .main .content .flexrow .cards {
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-content: space-between;
-  align-items: stretch;
   width: 50%;
-  margin: 1rem;
+  margin: var(--spacing);
   background-color: var(--color-gold-light);
-  padding: 1rem;
+  padding: var(--spacing);
   border-radius: var(--border-radius);
   list-style: none;
+}
+div.cards {
+  display: flex;
+  flex-direction: column;
+}
+.cards .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 /* Ljós borði */
 hr {
   border: var(--border-small) solid var(--color-gold);
-  margin: 1rem 0;
+  margin: var(--spacing) 0;
 }
 /* Matseðill - tafla */
 table {
   border-collapse: collapse;
   height: 400px;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing);
 }
 table tbody tr:nth-child(odd) {
   background-color: var(--color-gold);
@@ -172,8 +212,10 @@ checkbox {
 }
 /* Um */
 img {
-object-fit:cover;
-object-position: top;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
 }
 /* Footer */
 footer {
@@ -185,7 +227,7 @@ footer .content {
   display: flex;
   width: 100%;
   max-width: 900px;
-  padding: 1rem;
+  padding: var(--spacing);
   margin: 0 auto;
   text-align: center;
 }
